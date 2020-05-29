@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo installing Node
+      - echo installing Node 10
       - curl -sL https://deb.nodesource.com/setup_12.x | bash -
       - apt install -y nodejs
 
@@ -14,7 +14,7 @@ phases:
     pre_build:
       commands:
         - echo installing dependencies
-        - yarn
+        - yarn install
     build:
       commands:
         - echo building
@@ -23,4 +23,4 @@ phases:
       files:
         - "**/*"
       discard-paths: no
-      base-directory: pages
+      base-directory: build
